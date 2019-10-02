@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host : "localhost",
     port: 3306,
     user: "root",
-    password: "Secret Password, enter your own",
+    password: "#1tWothRee",
     database: "bamazon"
 });
 
@@ -98,7 +98,7 @@ function PurchaseMaker() {
                         (err) => {
                             if (err) throw err;
                             //Message to return when there is now error. Returns the amount of an item purchased 
-                            console.log(`Purchasing ${answer.units} units of ${res[0].PRODUCT_NAME} for $${PriceCalculation}! Thank you for your purchase!`) /n;
+                            console.log(`Purchasing ${answer.units} units of ${res[0].PRODUCT_NAME} for $${PriceCalculation}! Thank you for your purchase!` + '\n') ;
                             //Run Actions again to see if they want to do anything else.
                             Actions();
                             
