@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host : "localhost",
     port: 3306,
     user: "root",
-    password: "TopSecretPasswordThatI'veEnteredInHereInsteadOfMyRealPassword",
+    password: "Sorry, my password is hidden from prying eyes. Unless you use version control to look back at my previous iterations.",
     database: "bamazon"
 });
 
