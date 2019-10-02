@@ -1,3 +1,4 @@
+//Packages 
 const inquirer = require("inquirer");
 const mysql = require("mysql");
 var connection = mysql.createConnection({
@@ -8,18 +9,15 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-
-//Flag to see if we've run the Connect function yet. 
-
 //Connect us to our server
 function Connect(){
     connection.connect((err) => {
         if (err) throw err;
-        //If it didn't error out then return all rows in our table
+        //If it didn't error out then run our actions function.
         Actions();
     });
 };
-
+//Function to check Inventory. 
 function CheckInventory(){
     connection.query("SELECT * FROM products", (err, res) => {
         if (err) throw err;
@@ -28,7 +26,7 @@ function CheckInventory(){
         Actions();
     });
 };
-
+//Inquirier prompt that asks what task you'd like to perform.
 function Actions() {
     inquirer.prompt([
         {
@@ -49,7 +47,7 @@ function Actions() {
         }       
     });
 };
-
+//Couldn't figure out how to get things to run sequentelly, so I made a 2nd CheckInventory function that then runs the purchase maker so it always displays the latest data before you purchase.
 function CheckInventory2(){
     connection.query("SELECT * FROM products", (err, res) => {
         if (err) throw err;
@@ -59,7 +57,7 @@ function CheckInventory2(){
     });
 };
 
-
+//Handles the actual buying part. 
 function PurchaseMaker() {
     inquirer.prompt([
         {
