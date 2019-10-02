@@ -8,7 +8,6 @@ var connection = mysql.createConnection({
     password: "Sorry, my password is hidden from prying eyes. Unless you use version control to look back at my previous iterations.",
     database: "bamazon"
 });
-
 //Connect us to our server
 function Connect(){
     connection.connect((err) => {
@@ -56,7 +55,6 @@ function CheckInventory2(){
         PurchaseMaker();
     });
 };
-
 //Handles the actual buying part. 
 function PurchaseMaker() {
     inquirer.prompt([
